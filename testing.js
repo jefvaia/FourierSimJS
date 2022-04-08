@@ -1,3 +1,13 @@
+///
+/// Current Update
+///
+
+
+
+///
+/// Later Update
+///
+
 function initiateEvents(){
     canvas.addEventListener("mousemove", mouseMove, false);
     canvas.addEventListener("mousedown", mouseDown, false);
@@ -41,8 +51,6 @@ function mouseMove(event){
 }
 
 function mouseDown(event){
-
-    console.log(allowedDrawing);
 
     drawing = true;
 
@@ -104,36 +112,42 @@ function toVectors(){
 
     var output = dft(input);
 
-    for(var index = 0; index < output.length; index++){
+    //console.log(output);
 
-        var signal = output[index];
+    for(var index = 0; index < output.length; index++){
         
-        var polar = signal.getPolarForm(false);
+        var polar = output[index].getPolarForm(false);
 
         var newVector = index;
-        var amplitude = polar.re;
-        var phase = polar.im;
+        var speed = output[index].re;
+        var amplitude = polar.radius;
+        var phase = polar.phase;
+
+        //console.log(output[index]);
+        //console.log(polar);
 
         vectors[newVector] = new Vector();
-        vectors[newVector].speed = newVector;
+        vectors[newVector].speed = speed;
         vectors[newVector].size = amplitude;
         vectors[newVector].begin = phase;
 
     }
 
+    //console.log(vectors);
+
     resetEditor();
 }
 
 function testStart(){
-    var input = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0];
+    var input = [0, 1, 0, -1];
     var output = dft(input);
     //console.log(output);
     for(var index = 0; index < output.length; index++){
         //console.log(index);
         var signal = output[index];
         var polar = signal.getPolarForm(false);
-        //console.log(signal);
-        //console.log(polar);
+        console.log(signal);
+        console.log(polar);
     }
 }
 

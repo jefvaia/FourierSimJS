@@ -12,7 +12,7 @@
         <div id="infoTab">
             <a href="https://github.com/jefvaia/FourierSimJS">GitHub Repo</a>
             </br></br>
-            <p class="TsimpleNumberInput">Vector (Note: Geen vectors skippen)</p>
+            <p class="TsimpleNumberInput">Vector</p>
             <input class="IsimpleNumberInput" onchange="changeVector()" id="vector" type="number" min="0" value="0" autocomplete="off">
             <p class="TsimpleNumberInput">Size</p>
             <input class="IsimpleNumberInput" onchange="changeSize()" id="size" type="number" min="0" value="0" autocomplete="off">
@@ -22,6 +22,17 @@
             <input class="IsimpleNumberInput" onchange="changeBegin()" id="begin" type="number" value="0" autocomplete="off">
             <p class="TsimpleNumberInput">Start</p>
             <input class="IsimpleNumberInput" type="checkbox" id="state" onchange="changeState()" autocomplete="off">
+
+            <p class="TsimpleNumberInput">Circle Color</p>
+            <input type="color" value="#00FF00" onchange="circleColorChange()" id="circleColor" autocomplete="off">
+            <p class="TsimpleNumberInput">Circle Arms Color</p>
+            <input type="color" value="#0000FF" onchange="circleArmColorChange()" id="circleArmColor" autocomplete="off">
+            <p class="TsimpleNumberInput">Draw Line Color</p>
+            <input type="color" value="#FF0000" onchange="lineColorChange()" id="lineColor" autocomplete="off">
+            <p class="TsimpleNumberInput">Line Fade Factor</p>
+            <input class="IsimpleNumberInput" onchange="changeFadeFactor()" id="fadeFactor" type="number" min="0" value="0" autocomplete="off">
+            <p class="TsimpleNumberInput">Background Color</p>
+            <input type="color" value="#FFFFFF" onchange="bgColorChange()" id="bgColor" autocomplete="off">
 
             <h1>In development. Gaat zowieso breken.</h1>
 

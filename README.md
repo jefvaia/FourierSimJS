@@ -8,9 +8,9 @@ A simple and non-efficient fourier simulation
 - Vector offset
 ## Recent Features
 - Variable FPS (With delta time)
-## Upcoming Features
-- Reverse fourier (you draw something and the website generates vectors for you).
 - Custom colors
+## Upcoming Features
+- Discrete fourier (you draw something and the website generates vectors for you).
 - (I am open for suggestions)
 ## Inspiration
 3Blue1Brown video about fourier transform

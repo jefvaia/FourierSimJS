@@ -15,6 +15,12 @@ var time = null, lastTime = null;
 var drawPlacesX = [], drawPlacesY = [];
 var drawPlacesCount = 0;
 
+var circleColor = "#00FF00";
+var circleArmColor = "#0000FF";
+var lineColor = "#FF0000";
+var bgColor = "#FFFFFF"
+
+var fadeFactor = 0;
 
 function Vector(){
     this.size = 0;
@@ -56,14 +62,18 @@ function draw(){
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
+    context.rect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = bgColor;
+    context.fill();
+
     var tempX = 0, tempY = 0;
     var lastX = 0, lastY = 0
 
     for(var index = 0; index < vectors.length; index++){
-        drawCircle(tempX, tempY, vectors[index].size, "#00FF00", 2);
+        drawCircle(tempX, tempY, vectors[index].size, circleColor, 2);
         tempX += Math.cos(deg2rad(vectors[index].angle)) * vectors[index].size;
         tempY += Math.sin(deg2rad(vectors[index].angle)) * vectors[index].size;
-        drawLine(lastX, lastY, tempX, tempY, "#0000FF", 2, false);
+        drawLine(lastX, lastY, tempX, tempY, circleArmColor, 2, false);
         lastX = tempX;
         lastY = tempY;
         vectors[index].angle += vectors[index].speed * delta * 360 / 100;
@@ -76,7 +86,7 @@ function draw(){
 
         drawPlacesCount++;
 
-        drawBuffer(drawPlacesX, drawPlacesY, "#FF0000", 4);
+        drawBuffer(drawPlacesX, drawPlacesY, lineColor, 4);
 
         window.requestAnimationFrame(draw);
     }
@@ -106,19 +116,46 @@ function drawLine(x1, y1, x2, y2, color, thickness, original){
 }
 
 function drawBuffer(x, y, color, thickness){
-    context.beginPath();
-    
-    context.moveTo(x[0] + lerp(0, canvas.width, 0.5), y[0] + lerp(0, canvas.height, 0.5));
+
+    var fadeWorksUntil = drawPlacesCount - fadeFactor;
 
     for(var index = 1; index < drawPlacesCount; index++){
 
+        context.beginPath();
+
+        context.moveTo(x[index - 1] + lerp(0, canvas.width, 0.5), y[index - 1] + lerp(0, canvas.height, 0.5));
+
         context.lineTo(x[index] + lerp(0, canvas.width, 0.5), y[index] + lerp(0, canvas.height, 0.5));
 
-    }
-    
-    context.strokeStyle = color;
-    context.lineWidth = thickness;
+        if(fadeFactor != 0){
 
-    context.stroke();
+            var fade1 = "00", fade2 = "00";
+
+            fade1 = invert(clamp(Math.round(255 / fadeFactor * (drawPlacesCount - index - 1)), 0, 255), 0, 255).toString(16);
+            fade2 = invert(clamp(Math.round(255 / fadeFactor * (drawPlacesCount - index)), 0, 255), 0, 255).toString(16);
+
+            if(fade1.length == 1){
+                fade1 = "0" + fade1;
+            }
+
+            if(fade2.length == 1){
+                fade2 = "0" + fade2;
+            }
+
+            var gradient = context.createLinearGradient(x[index - 1] + lerp(0, canvas.width, 0.5), y[index - 1] + lerp(0, canvas.height, 0.5), x[index] + lerp(0, canvas.width, 0.5), y[index] + lerp(0, canvas.height, 0.5));
+            gradient.addColorStop(0, color + fade1);
+            gradient.addColorStop(1, color + fade2);
+
+        }
+        else{
+            gradient = lineColor;
+        }
+
+        context.strokeStyle = gradient;
+        context.lineWidth = thickness;
+
+        context.stroke();
+
+    }
 }
 

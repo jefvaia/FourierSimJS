@@ -78,3 +78,28 @@ function changeState(){
     draw();
     drawPlacesCount = 0;
 }
+
+function circleColorChange(){
+    circleColor = document.getElementById("circleColor").value;
+    resetEditor();
+}
+
+function circleArmColorChange(){
+    circleArmColor = document.getElementById("circleArmColor").value;
+    resetEditor();
+}
+
+function lineColorChange(){
+    lineColor = document.getElementById("lineColor").value;
+    resetEditor();
+}
+
+function changeFadeFactor(){
+    fadeFactor = document.getElementById("fadeFactor").value;
+    resetEditor();
+}
+
+function bgColorChange(){
+    bgColor = document.getElementById("bgColor").value;
+    resetEditor();
+}
