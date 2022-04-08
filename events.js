@@ -34,7 +34,7 @@ function pre(event){
 }
 
 function changeVector(){
-    currentVector = parseInt(document.getElementById("vector").value);
+    currentVector = Math.abs(parseInt(document.getElementById("vector").value));
     for(var index = 0; index <= currentVector; index++){
         if(vectors[index] instanceof Vector == false){
             vectors[index] = new Vector();
@@ -95,7 +95,7 @@ function lineColorChange(){
 }
 
 function changeFadeFactor(){
-    fadeFactor = document.getElementById("fadeFactor").value;
+    fadeFactor = Math.abs(parseInt(document.getElementById("fadeFactor").value));
     resetEditor();
 }
 

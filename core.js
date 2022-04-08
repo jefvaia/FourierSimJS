@@ -40,9 +40,11 @@ function resetVector(){
 }
 
 function resetEditor(){
+    document.getElementById("vector").value = currentVector;
     document.getElementById("size").value = vectors[currentVector].size;
     document.getElementById("speed").value = vectors[currentVector].speed;
     document.getElementById("begin").value = vectors[currentVector].begin;
+    document.getElementById("fadeFactor").value = fadeFactor;
     resetVector();
     time = new Date();
     lastTime = new Date();
