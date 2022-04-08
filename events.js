@@ -35,8 +35,10 @@ function pre(event){
 
 function changeVector(){
     currentVector = parseInt(document.getElementById("vector").value);
-    if(vectors[currentVector] == null){
-        vectors[currentVector] = new Vector();
+    for(var index = 0; index <= currentVector; index++){
+        if(vectors[index] instanceof Vector == false){
+            vectors[index] = new Vector();
+        }
     }
     resetEditor();
 }
