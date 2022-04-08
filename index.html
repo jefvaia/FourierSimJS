@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fourier Transform</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="core.js"></script>
+        <script src="events.js"></script>
+        <script src="math.js"></script>
+        <script src="testing.js"></script>
+    </head>
+    <body>
+        <div id="infoTab">
+            <p class="TsimpleNumberInput">Vector (Note: Geen vectors skippen)</p>
+            <input class="IsimpleNumberInput" onchange="changeVector()" id="vector" type="number" min="0" value="0">
+            <p class="TsimpleNumberInput">Size</p>
+            <input class="IsimpleNumberInput" onchange="changeSize()" id="size" type="number" min="0"  value="0">
+            <p class="TsimpleNumberInput">Speed</p>
+            <input class="IsimpleNumberInput" onchange="changeSpeed()" id="speed" type="number" value="0">
+            <p class="TsimpleNumberInput">Begin Angle</p>
+            <input class="IsimpleNumberInput" onchange="changeBegin()" id="begin" type="number" value="0">
+            <p class="TsimpleNumberInput">Start</p>
+            <input class="IsimpleNumberInput" type="checkbox" id="state" onchange="changeState()">
+
+            <h1>In development. Gaat zowieso breken.</h1>
+
+            <p class="TsimpleNumberInput">Draw Mode</p>
+            <input class="IsimpleNumberInput" type="checkbox" id="drawing" onchange="changeDrawState()"></br>
+            <button onclick="endDrawing()">End drawing</button>
+            <button onclick="toVectors()">Drawing to Vectors</button>
+        </div>
+        <div id="canvasTab">
+        </div>
+    </body>
+</html>
