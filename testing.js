@@ -8,7 +8,7 @@
 /// Later Update
 ///
 
-function initiateEvents(){
+function initiateTestEvents(){
     canvas.addEventListener("mousemove", mouseMove, false);
     canvas.addEventListener("mousedown", mouseDown, false);
     canvas.addEventListener("mouseup", mouseUp, false);
@@ -139,6 +139,7 @@ function toVectors(){
 }
 
 function testStart(){
+    initiateTestEvents();
     var input = [0, 1, 0, -1];
     var output = dft(input);
     //console.log(output);

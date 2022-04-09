@@ -4,7 +4,15 @@
 
 window.addEventListener('DOMContentLoaded', pre);
 
-window.addEventListener("resize", resizeCanvas);
+///                      ///
+/// Event Init Functions ///
+///                      ///
+
+function initiateEvents(){
+
+    window.addEventListener("resize", resizeCanvas);
+
+}
 
 ///                 ///
 /// Event Functions ///
@@ -14,6 +22,7 @@ function resizeCanvas(event){
     if(context != null){
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
+        context.translate(lerp(0, canvas.width, 0.5), lerp(0, canvas.height, 0.5));
         time = new Date();
         lastTime = new Date();
         draw();
