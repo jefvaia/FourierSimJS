@@ -2,8 +2,6 @@
 /// Core Variable Definition ///
 ///                          ///
 
-const zoomFactor = 120;
-
 var canvas = null;
 var context = null;
 
@@ -23,8 +21,6 @@ var lineColor = "#FF0000";
 var bgColor = "#FFFFFF"
 
 var fadeFactor = 0;
-
-var zoom = 1;
 
 function Vector(){
     this.size = 0;
