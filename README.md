@@ -13,4 +13,4 @@ A simple and non-efficient fourier simulation
 - Discrete fourier (you draw something and the website generates vectors for you).
 - (I am open for suggestions)
 ## Inspiration
-[link](https://www.youtube.com/watch?v=r6sGWTCMz2k "3Blue1Brown video about fourier transform")
+[3Blue1Brown video about fourier transform](https://www.youtube.com/watch?v=r6sGWTCMz2k "3Blue1Brown video about fourier transform")
