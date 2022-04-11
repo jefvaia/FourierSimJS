@@ -1,3 +1,12 @@
+/*
+ * Author: jefvaia
+ * 
+ * 
+ */
+
+
+
+
 ///                          ///
 /// Core Variable Definition ///
 ///                          ///
@@ -55,6 +64,14 @@ function resetEditor(){
 /// Draw Functions ///
 ///                ///
 
+function clear(){
+    context.clearRect(-lerp(0, canvas.width, 0.5), -lerp(0, canvas.height, 0.5), canvas.width, canvas.height);
+
+    context.rect(-lerp(0, canvas.width, 0.5), -lerp(0, canvas.height, 0.5), canvas.width, canvas.height);
+    context.fillStyle = bgColor;
+    context.fill();
+}
+
 function draw(){
     
     lastTime = time;
@@ -62,11 +79,7 @@ function draw(){
 
     var delta = (time.getTime() - lastTime.getTime()) / 1000;
 
-    context.clearRect(-lerp(0, canvas.width, 0.5), -lerp(0, canvas.height, 0.5), canvas.width, canvas.height);
-
-    context.rect(-lerp(0, canvas.width, 0.5), -lerp(0, canvas.height, 0.5), canvas.width, canvas.height);
-    context.fillStyle = bgColor;
-    context.fill();
+    clear();
 
     var tempX = 0, tempY = 0;
     var lastX = 0, lastY = 0

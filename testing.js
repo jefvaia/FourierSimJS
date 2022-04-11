@@ -36,7 +36,7 @@ function mouseMove(event){
 
         if(lastMouseX != null){
 
-            drawLine(lastMouseX, lastMouseY, event.offsetX, event.offsetY, "#000000", 1, true);
+            drawLine(lastMouseX - lerp(0, canvas.width, 0.5), lastMouseY - lerp(0, canvas.height, 0.5), event.offsetX - lerp(0, canvas.width, 0.5), event.offsetY - lerp(0, canvas.height, 0.5), "#000000", 1, true);
 
         }
 
@@ -90,13 +90,15 @@ function changeDrawState(){
 
 function endDrawing(){
 
+    clear();
+
     for(var index = 1; index < mouseBufferX.length; index++){
 
-        drawLine(mouseBufferX[index - 1], mouseBufferY[index - 1], mouseBufferX[index], mouseBufferY[index], "#000000", 1, true);
+        drawLine(mouseBufferX[index - 1] - lerp(0, canvas.width, 0.5), mouseBufferY[index - 1] - lerp(0, canvas.height, 0.5), mouseBufferX[index] - lerp(0, canvas.width, 0.5), mouseBufferY[index] - lerp(0, canvas.height, 0.5), "#000000", 1, true);
 
     }
 
-    drawLine(mouseBufferX[0], mouseBufferY[0], mouseBufferX[mouseBufferX.length - 1], mouseBufferY[mouseBufferY.length - 1], "#000000", 1, true);
+    drawLine(mouseBufferX[0] - lerp(0, canvas.width, 0.5), mouseBufferY[0] - lerp(0, canvas.height, 0.5), mouseBufferX[mouseBufferX.length - 1] - lerp(0, canvas.width, 0.5), mouseBufferY[mouseBufferY.length - 1] - lerp(0, canvas.height, 0.5), "#000000", 1, true);
 
 }
 
