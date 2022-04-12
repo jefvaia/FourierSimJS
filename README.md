@@ -1,9 +1,9 @@
 # FourierSimJS
 A simple and non-efficient fourier simulation
 ## Currently working on
-- Fade factor bug
+- Lag related problems
 ## Known Bugs
-- With low FPS the fade factor has less effect due to fade implementation
+- Lag makes the line jump
 ## Features
 - Vector size
 - Vector speed/frequency
@@ -11,6 +11,7 @@ A simple and non-efficient fourier simulation
 ## Recent Features
 - Variable FPS (With delta time)
 - Custom colors
+- Working fade effect
 ## Upcoming Features
 - Discrete fourier (you draw something and the website generates vectors for you)
 - (I am open for suggestions)

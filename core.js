@@ -133,18 +133,20 @@ function drawLine(x1, y1, x2, y2, color, thickness, original){
 
 function drawBuffer(x, y, color, thickness){
 
-    var fadeWorksUntil = drawPlacesCount - fadeFactor;
+    var distanceCalculated = 0;
 
-    for(var index = 1; index < drawPlacesCount; index++){
+    for(var index = drawPlacesCount - 1; index > 0; index--){
 
         context.beginPath();
 
-        context.moveTo(x[index - 1], y[index - 1]);
+        context.moveTo(x[index], y[index]);
 
-        context.lineTo(x[index], y[index]);
+        context.lineTo(x[index - 1], y[index - 1]);
+
 
         if(fadeFactor != 0){
 
+            /*
             var fade1 = "00", fade2 = "00";
 
             fade1 = invert(clamp(Math.round(255 / fadeFactor * (drawPlacesCount - index - 1)), 0, 255), 0, 255).toString(16);
@@ -161,6 +163,31 @@ function drawBuffer(x, y, color, thickness){
             var gradient = context.createLinearGradient(x[index - 1], y[index - 1], x[index], y[index]);
             gradient.addColorStop(0, color + fade2);
             gradient.addColorStop(1, color + fade1);
+            */
+
+            var distance = distanceBetween(x[index], y[index], x[index - 1], y[index - 1]);
+
+            var fade1 = "00", fade2 = "00";
+
+            fade1 = invert(clamp(Math.round(255 / fadeFactor * (distanceCalculated + distance)), 0, 255), 0, 255).toString(16);
+            fade2 = invert(clamp(Math.round(255 / fadeFactor * (distanceCalculated)), 0, 255), 0, 255).toString(16);
+
+            if(fade1.length == 1){
+                fade1 = "0" + fade1;
+            }
+
+            if(fade2.length == 1){
+                fade2 = "0" + fade2;
+            }
+
+            //console.log(fade1);
+            //console.log(fade2);
+
+            var gradient = context.createLinearGradient(x[index], y[index], x[index - 1], y[index - 1]);
+            gradient.addColorStop(0, color + fade2);
+            gradient.addColorStop(1, color + fade1);
+
+            distanceCalculated += distance;
 
         }
         else{
