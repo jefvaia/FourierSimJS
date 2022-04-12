@@ -48,6 +48,18 @@ function pre(event){
     initiateEvents();
 
     testStart();
+
+    setTimeout(FPSUpdater, 500);
+}
+
+function FPSUpdater(){
+    
+    if(state == true){
+        document.getElementById("FPS").innerHTML = frameCount * 2;
+        frameCount = 0;
+    }
+
+    setTimeout(FPSUpdater, 500);
 }
 
 function changeVector(){

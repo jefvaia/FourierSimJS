@@ -12,34 +12,35 @@
         <div id="infoTab">
             <a href="https://github.com/jefvaia/FourierSimJS">GitHub Repo</a>
             </br></br>
-            <p class="TsimpleNumberInput">Vector</p>
-            <input class="IsimpleNumberInput" onchange="changeVector()" id="vector" type="number" min="0" value="0" autocomplete="off">
-            <p class="TsimpleNumberInput">Size</p>
-            <input class="IsimpleNumberInput" onchange="changeSize()" id="size" type="number" min="0" value="0" autocomplete="off">
-            <p class="TsimpleNumberInput">Speed</p>
-            <input class="IsimpleNumberInput" onchange="changeSpeed()" id="speed" type="number" value="0" autocomplete="off">
-            <p class="TsimpleNumberInput">Begin Angle</p>
-            <input class="IsimpleNumberInput" onchange="changeBegin()" id="begin" type="number" value="0" autocomplete="off">
-            <p class="TsimpleNumberInput">Start</p>
-            <input class="IsimpleNumberInput" type="checkbox" id="state" onchange="changeState()" autocomplete="off">
-
-            <p class="TsimpleNumberInput">Circle Color</p>
-            <input type="color" value="#00FF00" onchange="circleColorChange()" id="circleColor" autocomplete="off">
-            <p class="TsimpleNumberInput">Circle Arms Color</p>
-            <input type="color" value="#0000FF" onchange="circleArmColorChange()" id="circleArmColor" autocomplete="off">
-            <p class="TsimpleNumberInput">Draw Line Color</p>
-            <input type="color" value="#FF0000" onchange="lineColorChange()" id="lineColor" autocomplete="off">
-            <p class="TsimpleNumberInput">Line Fade Distance/Factor</p>
-            <input class="IsimpleNumberInput" onchange="changeFadeFactor()" id="fadeFactor" type="number" min="0" value="0" autocomplete="off">
-            <p class="TsimpleNumberInput">Background Color</p>
-            <input type="color" value="#FFFFFF" onchange="bgColorChange()" id="bgColor" autocomplete="off">
-
-            <h1>In development. Gaat zowieso breken.</h1>
-
-            <p class="TsimpleNumberInput">Draw Mode</p>
+            <p>FPS: <p id="FPS"></p></p>
+            </br>
+            <p class="TsimpleNumberInput">Vector</p></br>
+            <input class="IsimpleNumberInput" onchange="changeVector()" id="vector" type="number" min="0" value="0" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Size</p></br>
+            <input class="IsimpleNumberInput" onchange="changeSize()" id="size" type="number" min="0" value="0" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Speed</p></br>
+            <input class="IsimpleNumberInput" onchange="changeSpeed()" id="speed" type="number" value="0" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Begin Angle</p></br>
+            <input class="IsimpleNumberInput" onchange="changeBegin()" id="begin" type="number" value="0" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Start</p></br>
+            <input class="IsimpleNumberInput" type="checkbox" id="state" onchange="changeState()" autocomplete="off"></br>
+            </br>
+            <p class="TsimpleNumberInput">Circle Color</p></br>
+            <input type="color" value="#00FF00" onchange="circleColorChange()" id="circleColor" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Circle Arms Color</p></br>
+            <input type="color" value="#0000FF" onchange="circleArmColorChange()" id="circleArmColor" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Draw Line Color</p></br>
+            <input type="color" value="#FF0000" onchange="lineColorChange()" id="lineColor" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Line Fade Distance/Factor</p></br>
+            <input class="IsimpleNumberInput" onchange="changeFadeFactor()" id="fadeFactor" type="number" min="0" value="0" autocomplete="off"></br>
+            <p class="TsimpleNumberInput">Background Color</p></br>
+            <input type="color" value="#FFFFFF" onchange="bgColorChange()" id="bgColor" autocomplete="off"></br>
+            </br>
+            <h1>In development. Gaat zowieso breken.</h1></br>
+            <p class="TsimpleNumberInput">Draw Mode</p></br>
             <input class="IsimpleNumberInput" type="checkbox" id="drawing" onchange="changeDrawState()" autocomplete="off"></br>
-            <button onclick="endDrawing()">End drawing</button>
-            <button onclick="toVectors()">Drawing to Vectors</button>
+            <button onclick="endDrawing()">End drawing</button></br>
+            <button onclick="toVectors()">Drawing to Vectors</button></br>
         </div>
             <div id="canvasTab">
         </div>

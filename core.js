@@ -30,6 +30,8 @@ var bgColor = "#FFFFFF"
 
 var fadeFactor = 0;
 
+var frameCount = 0;
+
 function Vector(){
     this.size = 0;
     this.speed = 0;
@@ -101,6 +103,8 @@ function draw(){
         drawPlacesCount++;
 
         drawBuffer(drawPlacesX, drawPlacesY, lineColor, 4);
+
+        frameCount++;
 
         window.requestAnimationFrame(draw);
     }
