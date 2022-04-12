@@ -159,8 +159,8 @@ function drawBuffer(x, y, color, thickness){
             }
 
             var gradient = context.createLinearGradient(x[index - 1], y[index - 1], x[index], y[index]);
-            gradient.addColorStop(0, color + fade1);
-            gradient.addColorStop(1, color + fade2);
+            gradient.addColorStop(0, color + fade2);
+            gradient.addColorStop(1, color + fade1);
 
         }
         else{
