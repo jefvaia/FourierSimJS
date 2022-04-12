@@ -1,5 +1,7 @@
 # FourierSimJS
 A simple and non-efficient fourier simulation
+## Currently working on
+- Fade factor bug
 ## Known Bugs
 - With low FPS the fade factor has less effect due to fade implementation
 ## Features
