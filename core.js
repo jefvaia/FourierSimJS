@@ -1,11 +1,8 @@
 /*
  * Author: jefvaia
- * 
- * 
+ * GitHub Page: https://github.com/jefvaia/FourierSimJS
+ * Message: You may use this code however you like. I don't mind people changing the code at all.
  */
-
-
-
 
 ///                          ///
 /// Core Variable Definition ///
@@ -13,6 +10,8 @@
 
 var canvas = null;
 var context = null;
+
+var halfX = 0, halfY = 0;
 
 var state = false;
 
@@ -65,9 +64,9 @@ function resetEditor(){
 ///                ///
 
 function clear(){
-    context.clearRect(-lerp(0, canvas.width, 0.5), -lerp(0, canvas.height, 0.5), canvas.width, canvas.height);
+    context.clearRect(-halfX, -drawPlacesY, canvas.width, canvas.height);
 
-    context.rect(-lerp(0, canvas.width, 0.5), -lerp(0, canvas.height, 0.5), canvas.width, canvas.height);
+    context.rect(-halfX, -drawPlacesY, canvas.width, canvas.height);
     context.fillStyle = bgColor;
     context.fill();
 }

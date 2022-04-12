@@ -1,3 +1,9 @@
+/*
+ * Author: jefvaia
+ * GitHub Page: https://github.com/jefvaia/FourierSimJS
+ * Message: You may use this code however you like. I don't mind people changing the code at all.
+ */
+
 ///                   ///
 /// event Declaration ///
 ///                   ///
@@ -22,7 +28,9 @@ function resizeCanvas(event){
     if(context != null){
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
-        context.translate(lerp(0, canvas.width, 0.5), lerp(0, canvas.height, 0.5));
+        halfX = lerp(0, canvas.width, 0.5);
+        halfY = lerp(0, canvas.height, 0.5);
+        context.translate(halfX, halfY);
         time = new Date();
         lastTime = new Date();
         draw();

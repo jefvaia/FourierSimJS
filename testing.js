@@ -1,3 +1,9 @@
+/*
+ * Author: jefvaia
+ * GitHub Page: https://github.com/jefvaia/FourierSimJS
+ * Message: You may use this code however you like. I don't mind people changing the code at all.
+ */
+
 ///
 /// Current Update
 ///
