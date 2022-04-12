@@ -64,9 +64,9 @@ function resetEditor(){
 ///                ///
 
 function clear(){
-    context.clearRect(-halfX, -drawPlacesY, canvas.width, canvas.height);
+    context.clearRect(-halfX, -halfY, canvas.width, canvas.height);
 
-    context.rect(-halfX, -drawPlacesY, canvas.width, canvas.height);
+    context.rect(-halfX, -halfY, canvas.width, canvas.height);
     context.fillStyle = bgColor;
     context.fill();
 }
