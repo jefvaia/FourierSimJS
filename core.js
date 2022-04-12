@@ -102,8 +102,6 @@ function draw(){
 
         drawBuffer(drawPlacesX, drawPlacesY, lineColor, 4);
 
-        
-
         window.requestAnimationFrame(draw);
     }
 }
@@ -146,24 +144,11 @@ function drawBuffer(x, y, color, thickness){
 
         if(fadeFactor != 0){
 
-            /*
-            var fade1 = "00", fade2 = "00";
+            if(distanceCalculated >= fadeFactor){
 
-            fade1 = invert(clamp(Math.round(255 / fadeFactor * (drawPlacesCount - index - 1)), 0, 255), 0, 255).toString(16);
-            fade2 = invert(clamp(Math.round(255 / fadeFactor * (drawPlacesCount - index)), 0, 255), 0, 255).toString(16);
-
-            if(fade1.length == 1){
-                fade1 = "0" + fade1;
+                break;
+                
             }
-
-            if(fade2.length == 1){
-                fade2 = "0" + fade2;
-            }
-
-            var gradient = context.createLinearGradient(x[index - 1], y[index - 1], x[index], y[index]);
-            gradient.addColorStop(0, color + fade2);
-            gradient.addColorStop(1, color + fade1);
-            */
 
             var distance = distanceBetween(x[index], y[index], x[index - 1], y[index - 1]);
 
@@ -179,9 +164,6 @@ function drawBuffer(x, y, color, thickness){
             if(fade2.length == 1){
                 fade2 = "0" + fade2;
             }
-
-            //console.log(fade1);
-            //console.log(fade2);
 
             var gradient = context.createLinearGradient(x[index], y[index], x[index - 1], y[index - 1]);
             gradient.addColorStop(0, color + fade2);
